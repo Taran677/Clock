@@ -5,24 +5,37 @@ let a = setInterval((e) => {
         base.removeChild(hoursPlace);
         base.removeChild(minutesPlace);
         base.removeChild(secondsPlace);
-    }, 980)
-    let hours = new Date().getHours()
-    let minutes = new Date().getMinutes()
-    let seconds = new Date().getSeconds()
+    }, 985)
+    let hours, minutes, seconds;
+
+    // let y = [1, 1, 1];
+    let f = setInterval(() => {
+        y = []
+        hours = new Date().getHours()
+        minutes = new Date().getMinutes()
+        seconds = new Date().getSeconds()
+        y[0] = hours
+        y[1] = minutes
+        y[2] = seconds
+    }, 300);
+    hours = y[0];
+    minutes = y[1];
+    seconds = y[2];
+    console.log(y)
     let secondsPlace = document.createElement("div")
     let minutesPlace = document.createElement("div")
     let hoursPlace = document.createElement("div")
 
     let base = document.body.getElementsByClassName("base")[0]
     console.log(base)
-    
+
     if (hours < 10) {
         hoursPlace.innerHTML = "<p>" + "0" + hours + ":" + "</p>"
         base.append(hoursPlace)
         hoursPlace.setAttribute("class", "hours")
     }
     else {
-        hoursPlace.innerHTML = "<p>"+ hours + ":" + "</p>"
+        hoursPlace.innerHTML = "<p>" + hours + ":" + "</p>"
         base.append(hoursPlace)
         hoursPlace.setAttribute("class", "hours")
     }
@@ -33,7 +46,7 @@ let a = setInterval((e) => {
         minutesPlace.setAttribute("class", "minutes")
     }
     else {
-        minutesPlace.innerHTML = "<p>"+ minutes + ":" + "</p>"
+        minutesPlace.innerHTML = "<p>" + minutes + ":" + "</p>"
         base.append(minutesPlace)
         minutesPlace.setAttribute("class", "minutes")
     }
