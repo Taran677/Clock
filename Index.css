@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    height: 100%;
+}
+
+body {
+    background: url("https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.base {
+    background-image: linear-gradient(to right, rgb(255, 204, 255), rgb(211, 234, 255));
+    display: flex;
+    border-radius: 20px;
+    margin: 50% 20%;
+    flex-grow: 1;
+    font-size: 67pt;
+    mix-blend-mode: hard-light;
+    font-weight: 700;
+    justify-content: center;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    
+}
+
+.hours,
+.seconds,
+.minutes {
+    display: flex;
+    color: rgb(104, 104, 144);
+    padding: 10px;
+    animation-name: styling;
+    animation-duration: 0.4s;
+    align-self: center;
+}
+@keyframes styling {
+    0%{
+        font-size: smaller;
+    }
+    50%
+    {
+        font-size: xx-large;
+    }
+    100%
+    {
+        
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .hours,
+    .seconds,
+    .minutes {
+        padding: 7px;
+    }
+
+    .base {
+        font-weight: 100;
+        font-size: 50pt;
+        border-radius: 5px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        padding: 3px;
+        flex-direction: row !important;
+        writing-mode: vertical-lr;
+        flex-grow: 1;
+        min-height: 50px;
+    }
+}
+
+@media screen and (min-width:1500px) {
+
+    .hours,
+    .seconds,
+    .minutes {
+        padding: 30px;
+        flex-grow: 1;
+     
+    }
+
+    .base {
+        font-weight: 999;
+        font-size: 200pt;
+        border-radius: 50px;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width:4000px) {
+
+    .hours,
+    .seconds,
+    .minutes {
+        padding: 80px;
+    }
+
+    .base {
+        font-weight: 999;
+        font-size: 700pt;
+        border-radius: 100px;
+        padding: 20px;
+    }
+}
